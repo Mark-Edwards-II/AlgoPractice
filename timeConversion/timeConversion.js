@@ -1,22 +1,61 @@
-const timeConversion = (time12hr) => {
-    let time24hr = '';
-    if(time12hr[time12hr.length-2] === 'P' ) {
-        let temp = '';
-        temp += time12hr[0];
-        temp += time12hr[1];
-        time24hr += 12 + Number(temp);
-        for(let i = 2; i < time12hr.length-2; i++) time24hr += time12hr[i];
-        console.log(time24hr);
-        return time24hr;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const timeConversion = (s) => {
+    let hh = s[0] += s[1];
+    let mm = s[3] += s[4];
+    let ss = s[6] += s[7];
+    let ampm = s[8] += s[9];
+    if(ampm === 'PM') {
+        if(hh == '12') {
+            return hh+':'+ mm +':'+ ss;
+        }
+        else {
+            return String(12+ Number(hh)) + ':' + mm + ':' + ss;
+        }
     }
-    for(let i = 0; i < time12hr.length-2; i++) time24hr+= time12hr[i];
-    console.log(time24hr);
-    return time24hr;
+    else if(ampm === 'AM') {
+        if(hh == '12') {
+            return '00:'+ mm +':'+ ss;
+        }
+        else {
+            return hh+':'+mm+':'+ss;
+        }
+    }
 }
 
 
 timeConversion('12:05:45PM');
-timeConversion('01:09:00PM');
+timeConversion('01:09:53PM');
 timeConversion('12:05:45PM');
 timeConversion('07:25:10AM');
 timeConversion('12:50:00AM');
