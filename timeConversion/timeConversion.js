@@ -1,35 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const timeConversion = (s) => {
     let hh = s[0] += s[1];
     let mm = s[3] += s[4];
